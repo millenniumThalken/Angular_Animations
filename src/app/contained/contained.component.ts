@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
     selector: 'app-contained',
@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
         <h1>Self-Contained Animation</h1>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-12"></div>
+                    <div class="col-12">
+                        <app-mouse></app-mouse>
+                    </div>
                 </div>
             </div>`,
     styles: [``]
@@ -14,6 +16,8 @@ import { Component, OnInit } from '@angular/core';
 export class ContainedComponent implements OnInit {
 
     constructor() { }
+
+    @Input() currentState;
 
     ngOnInit() {
     }

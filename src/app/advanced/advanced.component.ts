@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+//within this component is a good example of reuseable animation. the fadeblock child component is using an imported custom animation file
+
 @Component({
     selector: 'app-advanced',
     template: `
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-12">
-                        <div></div>
+                        <app-fadeblock></app-fadeblock>
                     </div>
                 </div>
             </div>`,

@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+//this is a good example of animation between a parent and child components, the setState() method takes in a string labeled switchState
+//when you change switchState it updates the [currentState] which in the child component is bounded to the @changeState attribute, which is that
+//triggers the different animations
+
 @Component({
     selector: 'app-basic',
     template: `

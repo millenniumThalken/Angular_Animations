@@ -10,6 +10,8 @@ import { BasicComponent } from './basic/basic.component';
 import { AdvancedComponent } from './advanced/advanced.component';
 import { ContainedComponent } from './contained/contained.component';
 import { AnimboxComponent } from './animbox/animbox.component';
+import { MouseComponent } from './mouse/mouse.component';
+import { FadeblockComponent } from './fadeblock/fadeblock.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { AnimboxComponent } from './animbox/animbox.component';
         BasicComponent,
         AdvancedComponent,
         ContainedComponent,
-        AnimboxComponent
+        AnimboxComponent,
+        MouseComponent,
+        FadeblockComponent
     ],
     imports: [
         BrowserModule,

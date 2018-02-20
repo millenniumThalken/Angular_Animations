@@ -8,45 +8,47 @@ import { ContainedComponent } from './contained/contained.component';
 
 const animationRoutes: Routes = [
     {
-
         path: 'animation-home',
-
-        component: HomeComponent
-
+        component: HomeComponent,
+        //we are adding animation to our routes, here we add a data object with an animation object within, we give the animation object a value
+        //and name it 'home' it good to name the value something that represents the route
+        data: {
+            animation: {
+                value: 'home',
+            }
+        }
     },
-
     {
-
         path: 'animation-basics',
-
-        component: BasicComponent
-
+        component: BasicComponent,
+        data: {
+            animation: {
+                value: 'basic',
+            }
+        }
     },
-
     {
-
         path: 'animation-contained',
-
-        component: ContainedComponent
-
+        component: ContainedComponent,
+        data: {
+            animation: {
+                value: 'contained',
+            }
+        }
     },
-
     {
-
         path: 'animation-advanced',
-
-        component: AdvancedComponent
-
+        component: AdvancedComponent,
+        data: {
+            animations: {
+                value: 'advanced',
+            }
+        }
     },
-
     {
-
         path: '',
-
         redirectTo: '/animation-home',
-
         pathMatch: 'full'
-
     }
 
 ];

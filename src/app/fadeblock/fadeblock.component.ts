@@ -16,7 +16,7 @@ import { fadeAnimation } from '../animations';
     height: 300px;
     border-radius: 4px;
     margin: 5rem;
-    opacity: 1;
+    opacity: 0;
 }`],
     animations: [
         // trigger('changeState', [
@@ -30,9 +30,9 @@ import { fadeAnimation } from '../animations';
                     //each of these parameters is bonded to settings in the fadeAnimation method in our animations.ts files
                     params: {
                         delay: '300ms',
-                        from: 0,
-                        to: 1,
-                        time: '2s'
+                        from: 1,
+                        to: 0,
+                        time: '4s'
                     }
                 })
             ])

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { trigger, transition } from '@angular/animations';
+import { slideAnimation } from './animations';
 
 @Component({
     selector: 'app-root',
@@ -21,12 +23,28 @@ import { Component } from '@angular/core';
         </ul>
     </div>
 </nav>
-<div class="page">
-    <router-outlet></router-outlet>
+<div class="page" [@routerAnimations]="prepareRouteTransition(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
 </div>
   `,
-    styles: [``]
+    styles: [``],
+    encapsulation: ViewEncapsulation.None,
+    //we create the animation object and give the object a trigger property. within that trigger property we give it a name 'routerAnimation'
+    //which we used in the HTML to target what we want to animate.
+    //we then define what is going to happen when the trigger is active
+    animations: [
+        trigger('routerAnimations', [
+            //this means going from any route to any route we want to use the slideAnimation that we defined in the animations.ts file
+            transition('* => *', slideAnimation)
+        ])
+    ]
+
 })
 export class AppComponent {
 
+    //we need this for everything to work
+    prepareRouteTransition(outlet) {
+        const animation = outlet.activatedRouteData['animation'] || {};
+        return animation['value'] || null;
+    }
 }
